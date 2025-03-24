@@ -7,7 +7,7 @@
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.Clear();
-            int rock, paper, scissor, money, quit;
+            int rock, paper, scissor, money, quit, userChoice, computerChoice, bet;
             bool done = false;
             rock = 1;
             paper = 2;
@@ -16,71 +16,111 @@
             money = 1000;
             string ready;
             ready = "Yes";
-            Console.WriteLine("Rock, Paper, Sciccor!");
-            Console.WriteLine("");
-            Console.WriteLine("Instructions: Place a bet before playing the game, the game is Rock, Paper, Scissor");
+            Console.WriteLine(" ____   ___     __  __  _      ____   ____  ____   ___  ____  \r\n|    \\ /   \\   /  ]|  |/ ]    |    \\ /    ||    \\ /  _]|    \\ \r\n|  D  )     | /  / |  ' /     |  o  )  o  ||  o  )  [_ |  D  )\r\n|    /|  O  |/  /  |    \\     |   _/|     ||   _/    _]|    / \r\n|    \\|     /   \\_ |     \\    |  |  |  _  ||  | |   [_ |    \\ \r\n|  .  \\     \\     ||  .  |    |  |  |  |  ||  | |     ||  .  \\\r\n|__|\\_|\\___/ \\____||__|\\_|    |__|  |__|__||__| |_____||__|\\_|\r\n                                                              \r\n  _____   __  ____ _____ _____  ___   ____   __               \r\n / ___/  /  ]|    / ___// ___/ /   \\ |    \\ |  |              \r\n(   \\_  /  /  |  (   \\_(   \\_ |     ||  D  )|  |              \r\n \\__  |/  /   |  |\\__  |\\__  ||  O  ||    / |__|              \r\n /  \\ /   \\_  |  |/  \\ |/  \\ ||     ||    \\  __               \r\n \\    \\     | |  |\\    |\\    ||     ||  .  \\|  |              \r\n  \\___|\\____||____|\\___| \\___| \\___/ |__|\\_||__|              ");
             Console.WriteLine("To choose from the four options type in the number beside them.");
-            Console.WriteLine("Game starts!");
-            Console.WriteLine("You have 1000 dollars!");
             Console.WriteLine("Money: " + money + "$");         
-            Console.WriteLine("Place a bet!");
-            Console.WriteLine("Max bet is 750$");
-            int bet = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Bet: " + bet + "$");
-            if (bet >= 750)
-            {
-                Console.WriteLine("I said max bet 750$ silly boy!");
-            }
             Console.WriteLine("Play Rock, Paper, Scissor with me! (Type 'Yes' if ready.)");
             Console.WriteLine("Ready?");
             string ready1 = Console.ReadLine();
             if (ready == ready1)
             {
+                Console.Clear();
                 while (!done)
                 {
-                    money = 100;
                     Random random = new Random();
                     int randNum;
-                    int num1 = random.Next(1, 4);
+                    computerChoice = random.Next(1, 4);
                     Console.WriteLine("Alright!");
+                    Console.WriteLine("Place a bet!");
+                    bet = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Choose 1.Rock, 2.Paper, 3.Scissor, 4.Quit.");
-                    double answer1 = Convert.ToInt32(Console.ReadLine());
-                   
-                    if (answer1 == num1)
+                    Console.WriteLine();
+                    userChoice = Convert.ToInt32(Console.ReadLine());
+                    if (userChoice == computerChoice)
                     {
-                        int frequency, length;
-                        frequency = 800;
-                        length = 1500;
-                        Console.Beep(frequency, length);
+                        Console.WriteLine("Tie, it's a push!");
+                    }
+                    if (userChoice >= 4)
+                    {
+                        Console.WriteLine("Error, run program again");
+                        done =  true;
+                    }
+                    if (userChoice == rock && computerChoice == scissor)
+                    {
                         Console.WriteLine("");
                         Console.WriteLine("");
                         Console.WriteLine("Nice!");
                         Console.WriteLine("You won!");
-                        Console.WriteLine("It was " + num1 + "!");
-                        Console.WriteLine("You have " + (money + bet) + "$");
+                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("You have: ");
+                        Console.WriteLine(money - bet);
+                        Console.WriteLine();
                     }
-                    if (answer1 != num1)
+                    if (userChoice == paper && computerChoice == rock)
                     {
-                        int frequency, length;
-                        frequency = 1500;
-                        length = 1500;
-                        Console.Beep(frequency, length);
                         Console.WriteLine("");
                         Console.WriteLine("");
-                        Console.WriteLine("Wrong");
-                        Console.WriteLine("You lost, try again!");
-                        Console.WriteLine("It was " + num1 + "!");
-                        Console.WriteLine("You have " + (money - bet) + "$ left!");
-                    }   
-                    if (answer1 == 4)
+                        Console.WriteLine("Nice!");
+                        Console.WriteLine("You won!");
+                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("You have: ");
+                        Console.WriteLine(money - bet);
+                        Console.WriteLine();
+                    if (userChoice == scissor && computerChoice == paper)
                     {
-                        Console.WriteLine("Thanks for trying!");
+                            Console.WriteLine("");
+                            Console.WriteLine("");
+                            Console.WriteLine("Nice!");
+                            Console.WriteLine("You won!");
+                            Console.WriteLine("It was " + computerChoice + "!");
+                            Console.WriteLine("You have: ");
+                            Console.WriteLine(money - bet);
+                            Console.WriteLine();
                     }
+                    if (userChoice == scissor && computerChoice == rock)
+                    {
+                            Console.WriteLine("");
+                            Console.WriteLine("");
+                            Console.WriteLine("Wrong");
+                            Console.WriteLine("You lost, try again!");
+                            Console.WriteLine("It was " + computerChoice + "!");
+                            Console.WriteLine("You have: ");
+                            Console.WriteLine(money - bet);
+                            Console.WriteLine();
+                    }
+                    if (userChoice == paper && computerChoice == scissor)
+                    {
+                            Console.WriteLine("");
+                            Console.WriteLine("");
+                            Console.WriteLine("Wrong");
+                            Console.WriteLine("You lost, try again!");
+                            Console.WriteLine("It was " + computerChoice + "!");
+                            Console.WriteLine("You have: ");
+                            Console.WriteLine(money - bet);
+                            Console.WriteLine();
+                    }
+                    if (userChoice == rock && computerChoice == paper)
+                    {
+                            Console.WriteLine("");
+                            Console.WriteLine("");
+                            Console.WriteLine("Wrong");
+                            Console.WriteLine("You lost, try again!");
+                            Console.WriteLine("It was " + computerChoice + "!");
+                            Console.WriteLine("You have: ");
+                            Console.WriteLine(money - bet);
+                            Console.WriteLine();
+                    }
+                    if (userChoice == 4)
+                    {
+                            Console.WriteLine("Thanks for trying!");
+                            done = true;
+                    } 
+                    if (money == 0)
+                    {
+                        done = true;
+                    }
+                   }   
                 }
-                if (money == 0)
-                    {
-                        bool loop = true;
-                    }
             }
             else
             {
