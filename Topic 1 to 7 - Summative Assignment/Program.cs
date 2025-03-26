@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             int rock, paper, scissor, money, quit, userChoice, computerChoice, bet;
             bool done = false;
