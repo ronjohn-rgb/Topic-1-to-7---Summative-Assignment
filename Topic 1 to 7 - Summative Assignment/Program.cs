@@ -33,6 +33,7 @@ namespace Topic_1_to_7___Summative_Assignment
                     int randNum;
                     computerChoice = random.Next(1, 4);
                     Console.WriteLine("Alright!");
+                    Console.WriteLine("Money: " + money);
                     Console.WriteLine("Place a bet!");
                     bet = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Choose 1.Rock, 2.Paper, 3.Scissor, 4.Quit.");
@@ -41,9 +42,9 @@ namespace Topic_1_to_7___Summative_Assignment
                     if (userChoice == computerChoice)
                     {
                         Console.WriteLine("Tie, it's a push!");
-                        Console.WriteLine("It's " + computerChoice + "!");
+                        Console.WriteLine("Computer chose " + computerChoice + "!");
                     }
-                    else if (userChoice >= 4)
+                    else if (userChoice >= 5)
                     {
                         Console.WriteLine("Error, run program again");
                         done = true;
@@ -54,9 +55,10 @@ namespace Topic_1_to_7___Summative_Assignment
                         Console.WriteLine("");
                         Console.WriteLine("Nice!");
                         Console.WriteLine("You won!");
-                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("Computer chose scissors!");
+                        Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                         Console.WriteLine("You have: ");
-                        money = money + bet;
+                        Console.WriteLine(money = money + bet);
                         Console.WriteLine();
                     }
                     else if (userChoice == paper && computerChoice == rock)
@@ -65,7 +67,8 @@ namespace Topic_1_to_7___Summative_Assignment
                         Console.WriteLine("");
                         Console.WriteLine("Nice!");
                         Console.WriteLine("You won!");
-                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("Computer chose rock!");
+                        Console.WriteLine("    _______\r\n---'   ____)\r\n      (_____)\r\n      (_____)\r\n      (____)\r\n---.__(___)\r\n");
                         Console.WriteLine("You have: ");
                         Console.WriteLine(money = money + bet);
                         Console.WriteLine();
@@ -76,7 +79,8 @@ namespace Topic_1_to_7___Summative_Assignment
                         Console.WriteLine("");
                         Console.WriteLine("Nice!");
                         Console.WriteLine("You won!");
-                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("Computer chose paper!");
+                        Console.WriteLine("    _______\r\n---'   ____)______\r\n          ________)\r\n          _________)\r\n         _________)\r\n---.____________)\r\n");
                         Console.WriteLine("You have: ");
                         Console.WriteLine(money = money + bet);
                         Console.WriteLine();
@@ -87,7 +91,8 @@ namespace Topic_1_to_7___Summative_Assignment
                         Console.WriteLine("");
                         Console.WriteLine("Wrong");
                         Console.WriteLine("You lost, try again!");
-                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("Computer chose rock!");
+                        Console.WriteLine("    _______\r\n---'   ____)\r\n      (_____)\r\n      (_____)\r\n      (____)\r\n---.__(___)\r\n ");
                         Console.WriteLine("You have: ");
                         Console.WriteLine(money = money - bet);
                         Console.WriteLine();
@@ -98,7 +103,8 @@ namespace Topic_1_to_7___Summative_Assignment
                         Console.WriteLine("");
                         Console.WriteLine("Wrong");
                         Console.WriteLine("You lost, try again!");
-                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("Computer chose scissor!");
+                        Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                         Console.WriteLine("You have: ");
                         Console.WriteLine(money = money - bet);
                         Console.WriteLine();
@@ -109,7 +115,8 @@ namespace Topic_1_to_7___Summative_Assignment
                         Console.WriteLine("");
                         Console.WriteLine("Wrong");
                         Console.WriteLine("You lost, try again!");
-                        Console.WriteLine("It was " + computerChoice + "!");
+                        Console.WriteLine("Computer chose paper!");
+                        Console.WriteLine("    _______\r\n---'   ____)______\r\n          ________)\r\n          _________)\r\n         _________)\r\n---.____________)\r\n");
                         Console.WriteLine("You have: ");
                         Console.WriteLine(money = money - bet);
                         Console.WriteLine();
@@ -117,10 +124,12 @@ namespace Topic_1_to_7___Summative_Assignment
                     else if (userChoice == 4)
                     {
                         Console.WriteLine("Thanks for trying!");
+                        Console.WriteLine("  ____    _    __  __ _____    _____     _______ ____  \r\n / ___|  / \\  |  \\/  | ____|  / _ \\ \\   / / ____|  _ \\ \r\n| |  _  / _ \\ | |\\/| |  _|   | | | \\ \\ / /|  _| | |_) |\r\n| |_| |/ ___ \\| |  | | |___  | |_| |\\ V / | |___|  _ < \r\n \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\");
                         done = true;
                     }
                     else if (money == 0)
                     {
+                        Console.WriteLine("  ____    _    __  __ _____    _____     _______ ____  \r\n / ___|  / \\  |  \\/  | ____|  / _ \\ \\   / / ____|  _ \\ \r\n| |  _  / _ \\ | |\\/| |  _|   | | | \\ \\ / /|  _| | |_) |\r\n| |_| |/ ___ \\| |  | | |___  | |_| |\\ V / | |___|  _ < \r\n \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\");
                         done = true;
                     }
                 }
@@ -128,6 +137,7 @@ namespace Topic_1_to_7___Summative_Assignment
             else
                 {
                     Console.WriteLine("Run program to try again!");
+                    Console.WriteLine("__   __\r\n\\ \\ / /\r\n \\ V / \r\n(_)_(_)\r\n / _ \\ \r\n| | | |\r\n| |_| |\r\n \\___/ ");
                 }
             }
         }
